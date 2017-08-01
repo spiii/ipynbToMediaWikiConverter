@@ -29,13 +29,13 @@ for ipynbFile in ipynbFiles:
  
     myHtml=convertToHtml(filePath)
     mediawikiContent += '='+ipynbFile+'='
-    file = open(fileOutPath,"w") 
+    file = open(fileOutPath,"w", encoding="utf-8") 
     htmlText = '<html>{0}</html>'.format(myHtml)
     file.write( htmlText)
     mediawikiContent += '\n{0}\n'.format(htmlText)
     file.close() 
  
 # Prepare one mediawiki file for all ipynb.
-file = open(outputDir+ "wiki.txt","w") 
+file = open(outputDir+ "wiki.txt","w",, encoding="utf-8") 
 file.write(mediawikiContent)
 file.close()
